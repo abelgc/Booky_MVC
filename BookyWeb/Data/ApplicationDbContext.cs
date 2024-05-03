@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BookyWeb.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookyWeb.Data
 {
@@ -8,5 +9,7 @@ namespace BookyWeb.Data
         {
             
         }
+
+        public DbSet<Category> Categories { get; set; }
     }
 }
