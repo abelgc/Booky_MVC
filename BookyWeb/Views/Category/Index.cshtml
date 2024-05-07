@@ -12,10 +12,10 @@
     <tbody>
         @foreach (var cat in Model.OrderBy(x=>x.DisplayOrder))
         {
-            <tr>
-             <td>@cat.Name</td>
+          <tr>
+            <td>@cat.Name</td>
             <td>@cat.DisplayOrder</td>
-        </tr>
+          </tr>
         }
     </tbody>
     
