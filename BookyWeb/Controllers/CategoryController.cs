@@ -17,11 +17,16 @@ namespace BookyWeb.Controllers
             return View(categoryList);
         }
 
+        public IActionResult CreateCategory()
+        {
+            return View();
+        }
+        [HttpPost]
         public IActionResult CreateCategory(Category newCategory)
         {
-            if(newCategory == null)
+            if(string.IsNullOrEmpty(newCategory.Name))
             {
-                ModelState.TryAddModelError("name", "Category cannot be null");
+                ModelState.TryAddModelError("name", "Category cannot be empty");
             }
 
             if (newCategory!.Name == newCategory.DisplayOrder.ToString())
