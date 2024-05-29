@@ -35,6 +35,7 @@ namespace BookyWeb.Controllers
             {
                 _dbContext.Categories.Add(newCategory);//we ask to add a new row in table
                 _dbContext.SaveChanges(); //Commit changes
+                TempData["Success"] = $"New Category {newCategory.Name} successfully created";
                 return RedirectToAction("Index");
             } 
             
@@ -72,6 +73,7 @@ namespace BookyWeb.Controllers
             {
                 _dbContext.Categories.Update(newCategory);//we ask to add a new row in table
                 _dbContext.SaveChanges(); //Commit changes
+                TempData["success"] = $"Category {newCategory.Name} successfully updated";
                 return RedirectToAction("Index");
             }
 
@@ -109,6 +111,7 @@ namespace BookyWeb.Controllers
 
             _dbContext.Categories.Remove(category);
             _dbContext.SaveChanges(); //Commit changes
+            TempData["success"] = $"New Category {category.Name} successfully deleted";
             return RedirectToAction("Index");
            
         }
